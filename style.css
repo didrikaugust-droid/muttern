@@ -1,105 +1,242 @@
-<!DOCTYPE html>
-<html lang="no">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muttern</title>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
-<link rel="stylesheet" href="style.css">
+body{
+overflow-x:hidden;
+background:white;
+}
 
-</head>
-<body>
+/* HEADER */
 
-<header>
+header{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+padding:30px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:100;
+}
 
-<div class="logo">
-    MUTTERN
-</div>
+.logo{
+width:260px;
+}
 
-<div class="menu">
-    MENU
-</div>
+.menu-btn{
+width:110px;
+height:110px;
+background:white;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+text-decoration:none;
+font-weight:bold;
+color:#1327d9;
+}
 
-</header>
+/* HERO */
 
-<section class="hero">
+.hero{
+height:100vh;
+background:#1327d9;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 8%;
+position:relative;
+overflow:hidden;
+}
 
-<div class="bg-waves"></div>
+.circle{
+position:absolute;
+width:900px;
+height:900px;
+border-radius:50%;
+background:rgba(255,255,255,0.05);
+right:-250px;
+top:50%;
+transform:translateY(-50%);
+}
 
-<img class="fruit lemon1" src="images/lemon.png">
-<img class="fruit lemon2" src="images/lemon.png">
+.content{
+position:relative;
+z-index:5;
+}
 
-<img class="fruit raspberry1" src="images/raspberry.png">
-<img class="fruit raspberry2" src="images/raspberry.png">
+.content h1{
+font-size:120px;
+line-height:.9;
+color:white;
+font-weight:900;
+}
 
-<div class="left">
+.content p{
+margin-top:25px;
+font-size:30px;
+color:white;
+}
 
-<h1>
-Muttern<br>
-Refresh.
-</h1>
+.cta{
+display:inline-block;
+margin-top:35px;
+padding:22px 45px;
+background:#ff5b21;
+color:white;
+text-decoration:none;
+border-radius:60px;
+font-weight:bold;
+}
 
-<p>
-Den friskeste smaken<br>
-for sommeren.
-</p>
+.product{
+position:relative;
+z-index:5;
+}
 
-<a href="#" class="cta">
-UTFORSK SMAKER
-</a>
+.bottle{
+width:550px;
+transform:rotate(-15deg);
+animation:float 4s ease-in-out infinite;
+}
 
-</div>
+@keyframes float{
 
-<div class="right">
+0%,100%{
+transform:rotate(-15deg) translateY(0);
+}
 
-<img
-class="bottle"
-src="images/muttern-bottle.png"
->
+50%{
+transform:rotate(-15deg) translateY(-25px);
+}
 
-</div>
+}
 
-</section>
+/* FRUKT */
 
-<section class="yellow-section">
+.fruit{
+position:absolute;
+z-index:3;
+}
 
-<div class="orbit">
-    <div class="sun"></div>
-</div>
+.lemon{
+width:220px;
+top:120px;
+left:42%;
+animation:move 5s infinite ease-in-out;
+}
 
-<div class="yellow-content">
+.raspberry{
+width:180px;
+bottom:120px;
+right:28%;
+animation:move 6s infinite ease-in-out;
+}
 
-<div class="bottles">
+@keyframes move{
 
-<img src="images/bottle1.png">
-<img src="images/bottle2.png">
-<img src="images/bottle3.png">
-<img src="images/bottle4.png">
-<img src="images/bottle5.png">
+0%,100%{
+transform:translateY(0);
+}
 
-</div>
+50%{
+transform:translateY(-20px);
+}
 
-<div class="text">
+}
 
-<h2>
-Null sukker.<br>
-<span>100% smak.</span>
-</h2>
+/* SEKSJON 2 */
 
-<p>
-Opplev den nye Muttern-serien
-med maksimal smak og minimal sukker.
-</p>
+.flavors{
+background:#f9b81c;
+padding:120px 10%;
+text-align:center;
+}
 
-<a href="#">
-Se smaker
-</a>
+.flavors h2{
+font-size:90px;
+line-height:.9;
+color:white;
+font-weight:900;
+}
 
-</div>
+.flavors span{
+color:#5e2acc;
+}
 
-</div>
+.flavors p{
+margin-top:30px;
+font-size:28px;
+color:white;
+}
 
-</section>
+.cards{
+margin-top:70px;
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
 
-</body>
-</html>
+.card{
+width:220px;
+height:260px;
+background:white;
+border-radius:30px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+font-weight:bold;
+box-shadow:0 20px 40px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+/* MOBIL */
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+justify-content:center;
+text-align:center;
+padding-top:120px;
+}
+
+.content h1{
+font-size:70px;
+}
+
+.content p{
+font-size:22px;
+}
+
+.bottle{
+width:300px;
+margin-top:40px;
+}
+
+.logo{
+width:180px;
+}
+
+.menu-btn{
+width:80px;
+height:80px;
+font-size:14px;
+}
+
+.flavors h2{
+font-size:50px;
+}
+
+}
