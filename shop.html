@@ -43,7 +43,10 @@ body{
   transition:.3s ease;
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
 
-  height: 450px;
+  /* 🔥 FIX: gjør kortene lengre uten å påvirke bredde */
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card:hover{
@@ -57,7 +60,7 @@ body{
 
 .image-wrap img{
   width:100%;
-  height:220px;
+  height:260px;
   object-fit:cover;
   transition:.35s ease;
 }
